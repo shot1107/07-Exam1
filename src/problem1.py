@@ -2,8 +2,8 @@
 Exam 1, problem 1.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  March 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Shota Nakada.  March 2018.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -13,7 +13,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the doc-string for the   product_of_digits   function below.
+# DONE: 2.  READ the doc-string for the   product_of_digits   function below.
 #           Ask your instructor for help if you do not understand it.
 #
 #   Once you are confident that you understand the doc-string
@@ -196,7 +196,7 @@ def problem1a(a, b, threshold):
               returns 109 + 110 + 111 + 112 + 120 + 121 + 130,  which is 813
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # IMPORTANT NOTE
@@ -204,6 +204,14 @@ def problem1a(a, b, threshold):
     #     arguments, don't do that.  You are only allowed to use the
     #     1-argument version of the RANGE statement to solve this problem.
     # -------------------------------------------------------------------------
+
+    sum = 0
+
+    for k in range(a, b+1):
+        if product_of_digits(k) < threshold:
+            sum += k
+
+    return sum
 
 
 def run_test_problem1b():
@@ -217,6 +225,38 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+
+    # Test 1:
+    expected = 3
+    answer = problem1b(3)
+    print()
+    print('Test 1 is: problem1b(3)')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
+
+    # Test 2:
+    expected = 143
+    answer = problem1b(5)
+    print()
+    print('Test 2 is: problem1b(5)')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
+
+    # Test 3:
+    expected = 682
+    answer = problem1b(8)
+    print()
+    print('Test 3 is: problem1b(8)')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
+
+    # Test 4:
+    expected = 1386
+    answer = problem1b(10)
+    print()
+    print('Test 4 is: problem1b(10)')
+    print('  Expected:', expected)
+    print('  Actual:  ', answer)
 
 
 ###############################################################################
@@ -239,9 +279,17 @@ def problem1b(r):
            and the sum of the above numbers is 682
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          See the IMPORTANT NOTE just before the DEF above.
     # -------------------------------------------------------------------------
+
+    sum = 0
+
+    for k in range(r, r*r+1):
+        if product_of_digits(k) <= r:
+            sum += k
+
+    return sum
 
 
 # -----------------------------------------------------------------------------
